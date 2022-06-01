@@ -56,6 +56,6 @@ jobs:
         with:
           username: ${{ secrets.GH_PACKAGE_RELEASE_USER }}
           password: ${{ secrets.GH_PACKAGE_RELEASE_TOKEN }}
-          registry: ${{ env.DOCKER_REGISTRY }}
+          registry: docker.pkg.github.com/virtualidentityag/vi-saas-consultingtypeservice
           repository: ${{ env.DOCKER_IMAGE }}
           tag_with_ref: true
