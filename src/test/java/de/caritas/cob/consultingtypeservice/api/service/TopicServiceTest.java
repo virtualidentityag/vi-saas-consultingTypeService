@@ -4,10 +4,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.verify;
 
 import de.caritas.cob.consultingtypeservice.api.model.TopicEntity;
-import de.caritas.cob.consultingtypeservice.api.model.TopicStatus;
 import de.caritas.cob.consultingtypeservice.api.repository.TopicRepository;
 import de.caritas.cob.consultingtypeservice.api.tenant.TenantContext;
-
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -46,7 +44,6 @@ class TopicServiceTest {
     // then
     verify(topicRepository).save(topicEntity);
     assertThat(topicEntity.getCreateDate()).isNotNull();
-    assertThat(topicEntity.getStatus()).isEqualTo(TopicStatus.ACTIVE);
   }
 
   @Test
