@@ -2,6 +2,42 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/CaritasDeutschland/caritas-onlineBeratung-consultingTypeService/compare/v1.3.0...v1.5.0) (2022-07-11)
+
+
+### Features
+
+* [VIC-795] added fork auto sync config ([7acb02c](https://github.com/CaritasDeutschland/caritas-onlineBeratung-consultingTypeService/commit/7acb02c7c5d0a404a03bb74d0e7a1ac356589697))
+* add long titles ([fa7bb35](https://github.com/CaritasDeutschland/caritas-onlineBeratung-consultingTypeService/commit/fa7bb355cb1b379fd23e0f80f7149f3c5e3d8284))
+* add new attribute required for data exports to topics ([2abb92d](https://github.com/CaritasDeutschland/caritas-onlineBeratung-consultingTypeService/commit/2abb92d3287fd25a8a016b35c020ce8d2f9b3c6c))
+* added language formal property to basic response ([405e759](https://github.com/CaritasDeutschland/caritas-onlineBeratung-consultingTypeService/commit/405e7593cc192b1a010599a258024a87f7982be9))
+* added property for is peer chat ([5e20056](https://github.com/CaritasDeutschland/caritas-onlineBeratung-consultingTypeService/commit/5e200568b15d889ca94c785aabe09a5ba15172b3))
+* added property to configure video call ([0969aac](https://github.com/CaritasDeutschland/caritas-onlineBeratung-consultingTypeService/commit/0969aac9bb80228446bf630c6d074d9916c899d3))
+* adding tests for topic converter ([ca78fca](https://github.com/CaritasDeutschland/caritas-onlineBeratung-consultingTypeService/commit/ca78fcac32acb43774e3957010e7166cc10a53b5))
+* adding validation for topic status, increasing test coverage for sanitizer ([bde1881](https://github.com/CaritasDeutschland/caritas-onlineBeratung-consultingTypeService/commit/bde1881be52ea12a0f1e0b654199f98f8ac234e0))
+* dummy edit endpoint impl ([0e3691d](https://github.com/CaritasDeutschland/caritas-onlineBeratung-consultingTypeService/commit/0e3691d963659266db4506140e4ab479e612e46b))
+* enable security for topic APIs ([360ffa5](https://github.com/CaritasDeutschland/caritas-onlineBeratung-consultingTypeService/commit/360ffa546ba59ce1df7fe6cfb998cf55dc5a6e65))
+* implemenation of 1 - n relation of consulting type to group ([087f5f0](https://github.com/CaritasDeutschland/caritas-onlineBeratung-consultingTypeService/commit/087f5f042551719458bc3fb2e0a74ad9e262ec9c))
+* implemenation of new api endpoint for consulting type groups ([478f372](https://github.com/CaritasDeutschland/caritas-onlineBeratung-consultingTypeService/commit/478f372347b5c7a8dbfc7aa564e7ada31b23de19))
+* implementation of unit and integration tests ([161d0d2](https://github.com/CaritasDeutschland/caritas-onlineBeratung-consultingTypeService/commit/161d0d2f8aaa6b55dc34936de7cacaddb971d847))
+* implementing topic update endpoint ([b9acb71](https://github.com/CaritasDeutschland/caritas-onlineBeratung-consultingTypeService/commit/b9acb71743e926af0c77853ccf1fbee8480a331f))
+* merge with develop and resolve conflicts, fix code review comments ([661cc23](https://github.com/CaritasDeutschland/caritas-onlineBeratung-consultingTypeService/commit/661cc23267d1055d07259c76157b9c54067b2109))
+* update docs ([22dd6da](https://github.com/CaritasDeutschland/caritas-onlineBeratung-consultingTypeService/commit/22dd6da638bcf6607059d0b1c33f65b3a062eae1))
+* VIC-665 Registration | Basic registration with a main topic (and no PLZ) ([9d7a9ee](https://github.com/CaritasDeutschland/caritas-onlineBeratung-consultingTypeService/commit/9d7a9ee3422b74eaf7f8ffbef44a07bb78e4877a))
+* VIC-665 Registration | Basic registration with a main topic (and no PLZ) ([1523a63](https://github.com/CaritasDeutschland/caritas-onlineBeratung-consultingTypeService/commit/1523a635b040b48ef88aa316d1e3d0383533c26b))
+* VIC-665 Registration | Basic registration with a main topic (and no PLZ) ([6e9624c](https://github.com/CaritasDeutschland/caritas-onlineBeratung-consultingTypeService/commit/6e9624c9c2c53840168e13aa9be7f8d964d38cd8))
+
+
+### Bug Fixes
+
+* Checkstyle violation and sonar issue ([de701ed](https://github.com/CaritasDeutschland/caritas-onlineBeratung-consultingTypeService/commit/de701ed475fe1ff3611080ea51fb9eb1de14371e))
+* fixed unit test ([862f61c](https://github.com/CaritasDeutschland/caritas-onlineBeratung-consultingTypeService/commit/862f61c714cf44cab59ac1eef6de1ef485292254))
+* fixed unit test ([f5a937e](https://github.com/CaritasDeutschland/caritas-onlineBeratung-consultingTypeService/commit/f5a937e15fdfb246527289e1b47a7b4fa3483127))
+* fixed unit test ([75496f1](https://github.com/CaritasDeutschland/caritas-onlineBeratung-consultingTypeService/commit/75496f1524e507e32a48e4fc675c5f49bf30fe49))
+* force safe log4j version ([d755b16](https://github.com/CaritasDeutschland/caritas-onlineBeratung-consultingTypeService/commit/d755b16fd6a74fe35e216ba4f5dbcbda7c0deed1))
+* update log4j ([e432eb2](https://github.com/CaritasDeutschland/caritas-onlineBeratung-consultingTypeService/commit/e432eb21b758e0a2caea2caea2a245270a475b9b))
+* wrong api yaml ([0f465fa](https://github.com/CaritasDeutschland/caritas-onlineBeratung-consultingTypeService/commit/0f465fa3ecf2a47c3e35d5626e33cebf6fda634e))
+
 ## [1.3.0](https://github.com/CaritasDeutschland/caritas-onlineBeratung-consultingTypeService/compare/v1.2.0...v1.3.0) (2021-07-26)
 
 
