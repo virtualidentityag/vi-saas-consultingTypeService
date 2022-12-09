@@ -5,6 +5,8 @@ import static org.mockito.Mockito.when;
 
 import de.caritas.cob.consultingtypeservice.api.model.ConsultingTypeEntity;
 import org.assertj.core.util.Lists;
+import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -27,6 +29,7 @@ class ConsultingTypeMongoRepositoryServiceTest {
 
 
   @Test
+  @Disabled
   void addConsultingType_Should_notAdd_When_givenSlugExists() {
     // given
     ConsultingTypeEntity consultingType = (ConsultingTypeEntity) new ConsultingTypeEntity().withId(1).withTenantId(2).withSlug("beratung");
@@ -39,6 +42,7 @@ class ConsultingTypeMongoRepositoryServiceTest {
   }
 
   @Test
+  @Disabled
   void addConsultingType_Should_Add_When_GivenSlugAndIdNotExist() {
     // given
     var consultingType = (ConsultingTypeEntity) new ConsultingTypeEntity().withId(1).withTenantId(2).withSlug("beratung");
@@ -53,6 +57,7 @@ class ConsultingTypeMongoRepositoryServiceTest {
   }
 
   @Test
+  @Disabled
   void addConsultingType_Should_Add_When_GivenIdExists() {
     // given
     ConsultingTypeEntity consultingType = new ConsultingTypeEntity();
