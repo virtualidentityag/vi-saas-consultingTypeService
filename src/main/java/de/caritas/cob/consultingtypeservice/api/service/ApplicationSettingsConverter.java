@@ -1,6 +1,6 @@
 package de.caritas.cob.consultingtypeservice.api.service;
 
-
+import com.google.common.collect.Maps;
 import de.caritas.cob.consultingtypeservice.api.model.ApplicationSettingsDTO;
 import de.caritas.cob.consultingtypeservice.api.model.ApplicationSettingsDTOMainTenantSubdomainForSingleDomainMultitenancy;
 import de.caritas.cob.consultingtypeservice.api.model.ApplicationSettingsDTOMultitenancyWithSingleDomainEnabled;
@@ -15,28 +15,34 @@ import org.springframework.util.ReflectionUtils;
 public class ApplicationSettingsConverter {
 
   public ApplicationSettingsDTO toDTO(ApplicationSettingsEntity applicationSettings) {
-    return new ApplicationSettingsDTO()
-        .multitenancyWithSingleDomainEnabled(
-            toFeatureToggleDTO(applicationSettings.getMultitenancyWithSingleDomainEnabled()))
-        .multitenancyEnabled(
-            toFeatureToggleDTO(applicationSettings.getMultitenancyEnabled()))
-        .enableWalkthrough(
-            toFeatureToggleDTO(applicationSettings.getEnableWalkthrough()))
-        .disableVideoAppointments(
-            toFeatureToggleDTO(applicationSettings.getDisableVideoAppointments()))
-        .useTenantService(
-            toFeatureToggleDTO(applicationSettings.getUseTenantService()))
-        .mainTenantSubdomainForSingleDomainMultitenancy(
-            toSettingDTO(applicationSettings.getMainTenantSubdomainForSingleDomainMultitenancy()))
-        .useOverviewPage(toFeatureToggleDTO(applicationSettings.getUseOverviewPage()))
-        .calcomUrl(toSettingDTO(applicationSettings.getCalcomUrl()))
-        .budibaseAuthClientId(toSettingDTO(applicationSettings.getBudibaseAuthClientId()))
-        .budibaseUrl(toSettingDTO(applicationSettings.getBudibaseUrl()))
-        .calendarAppUrl(toSettingDTO(applicationSettings.getCalendarAppUrl()))
-            .legalContentChangesBySingleTenantAdminsAllowed(toFeatureToggleDTO(applicationSettings.getLegalContentChangesBySingleTenantAdminsAllowed()));
+    var settingsDTO =
+        new ApplicationSettingsDTO()
+            .multitenancyWithSingleDomainEnabled(
+                toFeatureToggleDTO(applicationSettings.getMultitenancyWithSingleDomainEnabled()))
+            .multitenancyEnabled(toFeatureToggleDTO(applicationSettings.getMultitenancyEnabled()))
+            .enableWalkthrough(toFeatureToggleDTO(applicationSettings.getEnableWalkthrough()))
+            .disableVideoAppointments(
+                toFeatureToggleDTO(applicationSettings.getDisableVideoAppointments()))
+            .useTenantService(toFeatureToggleDTO(applicationSettings.getUseTenantService()))
+            .mainTenantSubdomainForSingleDomainMultitenancy(
+                toSettingDTO(
+                    applicationSettings.getMainTenantSubdomainForSingleDomainMultitenancy()))
+            .useOverviewPage(toFeatureToggleDTO(applicationSettings.getUseOverviewPage()))
+            .calcomUrl(toSettingDTO(applicationSettings.getCalcomUrl()))
+            .budibaseAuthClientId(toSettingDTO(applicationSettings.getBudibaseAuthClientId()))
+            .budibaseUrl(toSettingDTO(applicationSettings.getBudibaseUrl()))
+            .calendarAppUrl(toSettingDTO(applicationSettings.getCalendarAppUrl()))
+            .legalContentChangesBySingleTenantAdminsAllowed(
+                toFeatureToggleDTO(
+                    applicationSettings.getLegalContentChangesBySingleTenantAdminsAllowed()))
+            .releaseToggles(Maps.newHashMap());
+
+    settingsDTO.getReleaseToggles().putAll(applicationSettings.getReleaseToggles());
+    return settingsDTO;
   }
 
-  private ApplicationSettingsDTOMainTenantSubdomainForSingleDomainMultitenancy toSettingDTO(Object setting) {
+  private ApplicationSettingsDTOMainTenantSubdomainForSingleDomainMultitenancy toSettingDTO(
+      Object setting) {
     if (setting == null) {
       return null;
     }
@@ -59,7 +65,6 @@ public class ApplicationSettingsConverter {
         .value(value);
   }
 
-
   private <T> T getFieldValue(Object object, String fieldName, Class<T> fieldType) {
     Field field = ReflectionUtils.findField(object.getClass(), fieldName, fieldType);
     if (field != null) {
@@ -70,5 +75,4 @@ public class ApplicationSettingsConverter {
       return null;
     }
   }
-
 }

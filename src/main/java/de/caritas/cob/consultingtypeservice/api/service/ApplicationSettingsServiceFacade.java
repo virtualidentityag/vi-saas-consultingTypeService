@@ -1,11 +1,9 @@
 package de.caritas.cob.consultingtypeservice.api.service;
 
 import de.caritas.cob.consultingtypeservice.api.model.ApplicationSettingsDTO;
-import java.util.Optional;
-
 import de.caritas.cob.consultingtypeservice.api.model.ApplicationSettingsEntity;
 import de.caritas.cob.consultingtypeservice.api.model.ApplicationSettingsPatchDTO;
-import de.caritas.cob.consultingtypeservice.schemas.model.LegalContentChangesBySingleTenantAdminsAllowed;
+import java.util.Optional;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -35,7 +33,17 @@ public class ApplicationSettingsServiceFacade {
     }
   }
 
-  private void convertPatchedValues(ApplicationSettingsPatchDTO settingsPatchDTO, ApplicationSettingsEntity entity) {
-    entity.getLegalContentChangesBySingleTenantAdminsAllowed().setValue(settingsPatchDTO.getLegalContentChangesBySingleTenantAdminsAllowed().getValue());
+  private void convertPatchedValues(
+      ApplicationSettingsPatchDTO settingsPatchDTO, ApplicationSettingsEntity entity) {
+    if (settingsPatchDTO.getLegalContentChangesBySingleTenantAdminsAllowed() != null) {
+      entity
+          .getLegalContentChangesBySingleTenantAdminsAllowed()
+          .setValue(settingsPatchDTO.getLegalContentChangesBySingleTenantAdminsAllowed());
+    }
+    if (settingsPatchDTO.getMainTenantSubdomainForSingleDomainMultitenancy() != null) {
+      entity
+          .getMainTenantSubdomainForSingleDomainMultitenancy()
+          .setValue(settingsPatchDTO.getMainTenantSubdomainForSingleDomainMultitenancy());
+    }
   }
 }
