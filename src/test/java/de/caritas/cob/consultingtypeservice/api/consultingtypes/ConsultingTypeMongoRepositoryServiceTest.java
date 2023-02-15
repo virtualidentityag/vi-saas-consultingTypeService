@@ -9,7 +9,6 @@ import static org.springframework.test.util.ReflectionTestUtils.setField;
 import de.caritas.cob.consultingtypeservice.api.model.ConsultingTypeEntity;
 import org.assertj.core.util.Lists;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.Ignore;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
