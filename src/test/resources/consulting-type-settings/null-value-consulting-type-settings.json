@@ -9,7 +9,6 @@
     "welcomeMessageText": null
   },
   "sendFurtherStepsMessage": true,
-  "isSetEmailAllowed": true,
   "showAskerProfile": true,
   "isVideoCallAllowed": true,
   "isSubsequentRegistrationAllowed": true,
@@ -28,10 +27,6 @@
   "groupChat": {
     "isGroupChat": false,
     "groupChatRules": null
-  },
-  "monitoring": {
-    "initializeMonitoring": false,
-    "monitoringTemplateFile": null
   },
   "initializeFeedbackChat": false,
   "isPeerChat": false,
@@ -72,6 +67,5 @@
     "requiredAidMissingRedirectUrl": null,
     "registrationPostcodeFallbackUrl": null
   },
-  "voluntaryComponents": null,
   "requiredComponents": null
 }

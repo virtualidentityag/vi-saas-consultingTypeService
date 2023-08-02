@@ -10,7 +10,7 @@ public class FullConsultingTypeMapper extends ConsultingTypeMapper {
    * Mapper for {@link ConsultingType} to {@link FullConsultingTypeResponseDTO}.
    *
    * @param consultingType the {@link ConsultingType}
-   * @return a instance of an {@link FullConsultingTypeResponseDTO}
+   * @return an instance of an {@link FullConsultingTypeResponseDTO}
    */
   public static FullConsultingTypeResponseDTO mapConsultingType(ConsultingType consultingType) {
     return new FullConsultingTypeResponseDTO()
@@ -31,17 +31,14 @@ public class FullConsultingTypeMapper extends ConsultingTypeMapper {
         .sendFurtherStepsMessage(consultingType.getSendFurtherStepsMessage())
         .isSubsequentRegistrationAllowed(consultingType.getIsSubsequentRegistrationAllowed())
         .isAnonymousConversationAllowed(consultingType.getIsAnonymousConversationAllowed())
-        .isSetEmailAllowed(consultingType.getIsSetEmailAllowed())
         .sessionDataInitializing(
             mapSessionDataInitializing(consultingType.getSessionDataInitializing()))
         .initializeFeedbackChat(consultingType.getInitializeFeedbackChat())
         .isPeerChat(consultingType.getIsPeerChat())
         .languageFormal(consultingType.getLanguageFormal())
         .showAskerProfile(consultingType.getShowAskerProfile())
-        .monitoring(mapMonitoring(consultingType.getMonitoring()))
         .roles(mapRoles(consultingType.getRoles()))
         .notifications(mapNotifications(consultingType.getNotifications()))
-        .voluntaryComponents(consultingType.getVoluntaryComponents())
         .requiredComponents(consultingType.getRequiredComponents())
         .welcomeScreen(mapWelcomeScreen(consultingType.getWelcomeScreen()))
         .isVideoCallAllowed(consultingType.getIsVideoCallAllowed());
