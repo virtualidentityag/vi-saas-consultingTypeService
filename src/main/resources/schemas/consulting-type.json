@@ -303,11 +303,6 @@
       "type": "boolean",
       "default": true
     },
-    "isSetEmailAllowed": {
-      "description": "Asker is allowed to set his email when he is registered for at least one consultingType with this setting 'true'",
-      "type": "boolean",
-      "default": true
-    },
     "sessionDataInitializing": {
       "description": "Settings to control which optional fields for consultation should be initialized for this consultation type.",
       "type": "object",
@@ -338,25 +333,6 @@
           "default": "false"
         }
       }
-    },
-    "monitoring": {
-      "description": "Settings for the initializing of the monitoring",
-      "type": "object",
-      "properties": {
-        "initializeMonitoring": {
-          "description": "Indicates whether the monitoring should be initialized for this consulting type",
-          "type": "boolean",
-          "default": false
-        },
-        "monitoringTemplateFile": {
-          "description": "The path to the template file for the initialization of the monitoring for this consulting type",
-          "type": ["string", "null"],
-          "default": null
-        }
-      },
-      "required": [
-        "initializeMonitoring"
-      ]
     },
     "initializeFeedbackChat": {
       "description": "Indicates whether the feedback chat should be initialized for every session of this consulting type",
@@ -527,7 +503,7 @@
       }
     },
     "showAskerProfile": {
-      "description": "True to show asker profile including monitoring for consultants. False, when asker profile and monitoring should not be viewable.",
+      "description": "True to show asker profile for consultants. False, when asker profile should not be viewable.",
       "type": "boolean",
       "default": true
     },
@@ -545,26 +521,6 @@
       "description": "Indicates whether anonymous 1:1 chats can be performed.",
       "type": "boolean",
       "default": false
-    },
-    "voluntaryComponents": {
-      "description": "Can be provided to display additional fields in the asker profile.",
-      "type": ["array", "null"],
-      "items": {
-        "anyOf": [
-          {
-            "type": "object",
-            "$ref": "#/definitions/RadioButton"
-          },
-          {
-            "type": "object",
-            "$ref": "#/definitions/SelectDropdown"
-          },
-          {
-            "type": "object",
-            "$ref": "#/definitions/TagSelect"
-          }
-        ]
-      }
     },
     "requiredComponents": {
       "description:": "Can be provided if additional data is required for registration.",

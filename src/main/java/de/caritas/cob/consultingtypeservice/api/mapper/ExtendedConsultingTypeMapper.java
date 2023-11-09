@@ -31,13 +31,11 @@ public class ExtendedConsultingTypeMapper extends ConsultingTypeMapper {
         .sendFurtherStepsMessage(consultingType.getSendFurtherStepsMessage())
         .isSubsequentRegistrationAllowed(consultingType.getIsSubsequentRegistrationAllowed())
         .isAnonymousConversationAllowed(consultingType.getIsAnonymousConversationAllowed())
-        .isSetEmailAllowed(consultingType.getIsSetEmailAllowed())
         .sessionDataInitializing(
             mapSessionDataInitializing(consultingType.getSessionDataInitializing()))
         .initializeFeedbackChat(consultingType.getInitializeFeedbackChat())
         .isPeerChat(consultingType.getIsPeerChat())
         .languageFormal(consultingType.getLanguageFormal())
-        .monitoring(mapMonitoring(consultingType.getMonitoring()))
         .roles(mapRoles(consultingType.getRoles()))
         .notifications(mapNotifications(consultingType.getNotifications()))
         .showAskerProfile(consultingType.getShowAskerProfile())
