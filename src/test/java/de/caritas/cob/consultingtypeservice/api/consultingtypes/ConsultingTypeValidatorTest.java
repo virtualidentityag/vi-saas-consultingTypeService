@@ -15,15 +15,15 @@ import de.caritas.cob.consultingtypeservice.api.exception.UnexpectedErrorExcepti
 import de.caritas.cob.consultingtypeservice.api.service.LogService;
 import java.io.File;
 import java.util.Objects;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.slf4j.Logger;
 
-@RunWith(MockitoJUnitRunner.class)
+@ExtendWith(MockitoExtension.class)
 public class ConsultingTypeValidatorTest {
 
   private static final String FIELD_NAME_CONSULTING_TYPE_JSON_SCHEMA_FILE =
@@ -33,7 +33,7 @@ public class ConsultingTypeValidatorTest {
 
   @Mock private Logger logger;
 
-  @Before
+  @BeforeEach
   public void setup() {
     setInternalState(LogService.class, "LOGGER", logger);
     consultingTypeValidator = new ConsultingTypeValidator();

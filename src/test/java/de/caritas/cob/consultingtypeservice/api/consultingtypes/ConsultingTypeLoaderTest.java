@@ -3,7 +3,7 @@ package de.caritas.cob.consultingtypeservice.api.consultingtypes;
 import static de.caritas.cob.consultingtypeservice.testHelper.TestConstants.BROKEN_FILE_PATH;
 import static de.caritas.cob.consultingtypeservice.testHelper.TestConstants.SRC_TEST_RESOURCES_BROKEN_CONSULTING_TYPE_SETTINGS;
 import static de.caritas.cob.consultingtypeservice.testHelper.TestConstants.SRC_TEST_RESOURCES_CONSULTING_TYPE_SETTINGS;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -16,17 +16,17 @@ import java.io.File;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import javax.annotation.PostConstruct;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.slf4j.Logger;
 import org.springframework.util.ReflectionUtils;
 
-@RunWith(MockitoJUnitRunner.class)
+@ExtendWith(MockitoExtension.class)
 public class ConsultingTypeLoaderTest {
 
   private static final String INIT_METHOD_NAME = "init";
@@ -41,7 +41,7 @@ public class ConsultingTypeLoaderTest {
   @Mock ConsultingTypeValidator consultingTypeValidator;
   @Mock private Logger logger;
 
-  @Before
+  @BeforeEach
   public void setup() {
     setInternalState(LogService.class, "LOGGER", logger);
     // we need this as mockito does not properly inject @Qualifier marked beans

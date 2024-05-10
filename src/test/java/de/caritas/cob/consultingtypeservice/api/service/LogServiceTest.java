@@ -6,21 +6,21 @@ import static org.mockito.Mockito.verify;
 import static org.powermock.reflect.Whitebox.setInternalState;
 
 import java.io.PrintWriter;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
-import org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.slf4j.Logger;
 
-@RunWith(MockitoJUnitRunner.class)
+@ExtendWith(MockitoExtension.class)
 public class LogServiceTest {
 
   @Mock Exception exception;
 
   @Mock private Logger logger;
 
-  @Before
+  @BeforeEach
   public void setup() {
     setInternalState(LogService.class, "LOGGER", logger);
   }
