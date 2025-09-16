@@ -78,6 +78,9 @@ components:
         enableWalkthrough:
           allOf:
             - $ref: '#/components/schemas/FeatureToggleDTO'
+        enableAdviceSeekerWalkThrough:
+          allOf:
+            - $ref: '#/components/schemas/FeatureToggleDTO'
         disableVideoAppointments:
           allOf:
             - $ref: '#/components/schemas/FeatureToggleDTO'
